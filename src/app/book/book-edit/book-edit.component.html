@@ -1,0 +1,27 @@
+<div class="pd-20 card-box mb-30">
+  <div class="clearfix">
+    <div class="pull-left">
+      <h4 class="text-blue h4">Chỉnh sửa sản phẩm</h4>
+    </div>
+  </div>
+  <form [formGroup]="bookForm" (ngSubmit)="submit()" >
+    <div class="form-group">
+      <label><h6>Tên sách</h6></label>
+      <input class="form-control" type="text" id="title" formControlName="title" >
+    </div>
+    <div class="form-group">
+      <label><h6>tác giả</h6></label>
+      <input class="form-control" value="bootstrap@example.com" type="text" id="author" formControlName="author">
+    </div>
+    <div class="form-group">
+      <label><h6>Mô tả</h6></label>
+      <textarea class="form-control" id="description" formControlName="description"></textarea>
+    </div>
+
+
+    <div class="form-group float-right">
+      <button class="btn btn-primary"  type="submit">chỉnh sửa</button>
+    </div>
+    <a class="btn btn-dark"  routerLink="/books" >Quay lại</a>
+  </form>
+</div>

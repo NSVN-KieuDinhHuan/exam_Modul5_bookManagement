@@ -1,0 +1,42 @@
+<!-- Simple Datatable start -->
+<div class="card-box mb-30">
+  <div class="pd-20">
+    <h4 class="text-blue h4">Danh sách các cuốn sách</h4>
+  </div>
+
+
+  <div class="pb-20 m-3">
+    <a routerLink="/books/create" class="btn btn-success float-right">Tạo mới</a>
+    <table class="data-table table stripe hover nowrap">
+      <thead>
+      <tr>
+        <th>#</th>
+        <th>Tiêu đề</th>
+        <th>Tác giả</th>
+        <th class="datatable-nosort">Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of books; index as i">
+        <td>{{i+1}}</td>
+        <td class="table-plus"><a routerLink="/books/view/{{book.id}}">{{book.title}}</a></td>
+        <td>{{book.author}}</td>
+        <td>
+          <div class="dropdown">
+            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              <i class="dw dw-more"></i>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+              <a class="dropdown-item" routerLink="/books/view/{{book.id}}"><i class="dw dw-eye"></i> View</a>
+              <a class="dropdown-item" routerLink="/books/edit/{{book.id}}"><i class="dw dw-edit2"></i> Edit</a>
+              <a class="dropdown-item" routerLink="/books/delete/{{book.id}}"><i class="dw dw-delete-3"></i> Delete</a>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- Simple Datatable End -->
+

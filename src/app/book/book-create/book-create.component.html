@@ -1,0 +1,29 @@
+<div class="pd-20 card-box mb-30">
+  <div class="clearfix">
+    <div class="pull-left">
+      <h4 class="text-blue h4">Thêm sản phẩm</h4>
+    </div>
+  </div>
+  <form #bookForm="ngForm" (ngSubmit)="createBook(bookForm)" >
+    <div class="form-group">
+      <label><h6>tên sách</h6></label>
+      <input class="form-control" type="text" id="title" name="title"  [(ngModel)]="book.title">
+    </div>
+    <div class="form-group">
+      <label><h6>tác giả</h6></label>
+      <input class="form-control"  type="text" id="author" name="author" [(ngModel)]="book.author">
+    </div>
+    <div class="form-group">
+      <label><h6>Mô tả</h6></label>
+      <textarea class="form-control" id="description" name="description" [(ngModel)]="book.description" ></textarea>
+    </div>
+
+
+    <div class="form-group float-right">
+      <button class="btn btn-primary"  type="submit">Tạo mới</button>
+
+    </div>
+    <a class="btn btn-dark"  routerLink="/books" >Quay lại</a>
+
+  </form>
+</div>
